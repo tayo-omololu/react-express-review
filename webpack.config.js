@@ -1,3 +1,5 @@
+// this file is run with npm run build
+// it uses babel to compile everything in client/src into bundle.js
 const path = require('path');
 
 module.exports = {
@@ -6,7 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, './client/dist'),
     filename: 'bundle.js',
   },
-  watch: true,
+  mode: 'development',
   module: {
     rules: [
       {
@@ -17,6 +19,10 @@ module.exports = {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },
       },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+      }
     ],
   },
   resolve: {
