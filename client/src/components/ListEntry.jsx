@@ -1,9 +1,9 @@
 import React from 'react';
 
 const ListEntry = props => (
-  <div onClick={() => props.deleteTodo(props.index)}>
+  <li onClick={() => props.deleteTodo(props.index)}>
     {props.name}
-  </div>
+  </li>
 );
 
 export default ListEntry;

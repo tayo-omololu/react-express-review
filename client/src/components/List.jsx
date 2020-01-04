@@ -54,7 +54,7 @@ class List extends Component {
           <input onChange={this.handleChange} />
         </form>
         <h4>Current todos</h4>
-        <div>
+        <ul>
           {this.state.todos.map((todo, index) => (
             <ListEntry
               key={index}
@@ -63,7 +63,7 @@ class List extends Component {
               deleteTodo={this.deleteTodo}
             />
           ))}
-        </div>
+        </ul>
       </div>
     );
   }
