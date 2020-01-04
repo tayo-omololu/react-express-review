@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-const axios = require('axios');
+import axios from 'axios';
 
 import ListEntry from './ListEntry';
 
@@ -14,7 +14,6 @@ class List extends Component {
     this.postTodo = this.postTodo.bind(this);
     this.deleteTodo = this.deleteTodo.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.postTodo = this.postTodo.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
