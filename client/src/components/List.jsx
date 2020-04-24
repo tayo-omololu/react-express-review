@@ -22,16 +22,37 @@ class List extends Component {
   }
 
   getTodos() {
-
-  }
+    axios
+    .get('/api')
+    .then((data) => {
+      this.setState({
+        todos: data.data
+      })
+    })
+    .catch((err) => {
+      console.error(err);
+  });
+}
 
   postTodo(todo) {
-
-  }
+    axios
+    .post('/api', {todo : todo})
+    .then(() => {
+      this.getTodos()})
+    .catch((err) => {
+      console.error(err);
+  });
+}
 
   deleteTodo(index) {
-
-  }
+    axios
+    .delete(`/api/${index}`)
+    .then(() => {
+      this.getTodos()})
+    .catch((err) => {
+      console.error(err);
+  });
+}
 
   handleChange(event) {
     this.setState({
